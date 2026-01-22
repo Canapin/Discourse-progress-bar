@@ -1,33 +1,11 @@
-@import "functions.scss";
-
-$percentage: round(calc(number($current_value) / number($max_value) * 100));
-
-@function valueDisplay() {
-  $value_display: str-replace($value_display, "{current}", $current_value);
-  $value_display: str-replace($value_display, "{max}", $max_value);
-  $value_display: str-replace($value_display, "{percentage}", $percentage);
-  @return $value_display;
-}
-
-$value_display: valueDisplay();
-
-@if $display_on_mobile == "false" {
-  .mobile-view .progress-bar__component {
-    display: none;
-  }
-}
-
-// Used to properly format the value display next to the progress bar
-@if number($current_value) >= number($max_value) and $hide_when_full == "true" {
-  .progress-bar__component {
-    display: none !important;
-  }
-}
-
 .progress-bar {
   &__component {
     display: flex;
     justify-content: center;
+    width: 100%;    
+    @media screen and (width >= 925px) {
+      width: auto;
+    }
   }
   &__wrap {
     display: flex;
@@ -60,54 +38,62 @@ $value_display: valueDisplay();
   }
   &__status {
     flex: 0 0 auto;
-    &:before {
-      content: "#{$value_display}";
-    }
   }
-  &__bar {
-    transition: all 1s ease;
+  &__bar {transition: all 1s ease;
+    height: 100%;
+    width: calc( #{$current_value} / #{$max_value} * 100% );    
+    max-width: 100%;
     background: if(
       $progress_bar_color == "",
-      hsl(calc($percentage), 100%, 50%),
+      hsl( calc( #{$current_value} / #{$max_value} * 100 ), 100%, 50% ),
       $progress_bar_color
-    ); // If empty, creates a dynamic color, from red (0%) to green (100%)
-    width: calc($percentage * 1%);
-    max-width: 100%;
+    );
   }
 }
 
 // Rules for different outlets
-.above-main-container-outlet {
-  & + .progress-bar__component {
+.above-main-container-progress-bar {
+  .progress-bar__component {
     padding-bottom: 1em;
   }
 }
-.above-site-header-outlet {
-  & + .progress-bar__component {
+.above-site-header-progress-bar {
+  .progress-bar__component {
     padding: 0.5em 10px 0;
     background-color: var(--header_background);
   }
 }
-.below-site-header-outlet {
-  & + .progress-bar__component {
+.below-site-header-progress-bar {
+  .progress-bar__component {
     padding: 0.5em 10px 0;
   }
 }
-#d-sidebar {
-  .progress-bar__wrap {
+.before-sidebar-sections-progress-bar {
+  .progress-bar__wrap {    
     width: 100%;
     padding: 1em 10px 0;
   }
 }
-.before-header-panel-progress-bar {
+.before-header-panel-progress-bar { // Don't show on mobile, no room for that
   .progress-bar {
     &__wrap {
       width: 100%;
+    }
+    &__component {
+      display: none;      
+      @media screen and (width >= 925px) {
+        display: initial;
+      }
     }
     &__before,
     &__after {
       width: auto;
       margin: 0 0.5em;
+    }
+  }
+  @media screen and (width >= 925px) {
+    .before-header-panel-outlet {
+      width: 100%;
     }
   }
 }

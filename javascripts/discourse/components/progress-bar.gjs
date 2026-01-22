@@ -7,6 +7,7 @@ import { defaultHomepage } from "discourse/lib/utilities";
 export default class ProgressBar extends Component {
   @service router;
   @service site;
+  
   @tracked current_value = settings.current_value;
   @tracked max_value = settings.max_value;
   @tracked hide_when_full = settings.hide_when_full;
@@ -25,6 +26,24 @@ export default class ProgressBar extends Component {
 
   get showOnMobile() {
     return !this.site.mobileView || settings.display_on_mobile;
+  }
+
+  get percentage() {
+    const current = parseFloat(this.current_value) || 0;
+    const max = parseFloat(this.max_value) || 100;
+
+    if (max === 0) return 0;
+    return Math.round((current / max) * 100);
+  }
+
+  get displayProgressValue() {
+    let progressValue = settings.value_display || "{percentage}%";
+    
+    progressValue = progressValue.replace(/{current}/g, this.current_value);
+    progressValue = progressValue.replace(/{max}/g, this.max_value);
+    progressValue = progressValue.replace(/{percentage}/g, this.percentage);
+
+    return progressValue;
   }
 
   get showOnRoute() {
@@ -63,7 +82,9 @@ export default class ProgressBar extends Component {
             <div class="progress-bar__container">
               <div class="progress-bar__bar"></div>
             </div>
-            <div class="progress-bar__status"></div>
+            <div class="progress-bar__status">
+              {{this.displayProgressValue}}
+            </div>
           </div>
           <div class="progress-bar__after">
             {{{this.contentAfter}}}

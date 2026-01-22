@@ -1,7 +1,7 @@
 import { apiInitializer } from "discourse/lib/api";
 import ProgressBar from "../components/progress-bar";
 
-export default apiInitializer("1.14.0", (api) => {
+export default apiInitializer((api) => {
   if (!settings.outlet_name.length) {
     return;
   }

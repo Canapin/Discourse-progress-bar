@@ -1,5 +1,8 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
+import { action } from "@ember/object";
+import didInsert from "@ember/render-modifiers/modifiers/did-insert";
+import willDestroy from "@ember/render-modifiers/modifiers/will-destroy";
 import { service } from "@ember/service";
 import { htmlSafe } from "@ember/template";
 import { defaultHomepage } from "discourse/lib/utilities";
@@ -11,6 +14,20 @@ export default class ProgressBar extends Component {
   @tracked current_value = settings.current_value;
   @tracked max_value = settings.max_value;
   @tracked hide_when_full = settings.hide_when_full;
+
+  @action
+  addBodyClass() {
+    if (settings.outlet_name) {
+      document.body.classList.add(`${settings.outlet_name}-progress-bar`);
+    }
+  }
+
+  @action
+  removeBodyClass() {
+    if (settings.outlet_name) {
+      document.body.classList.remove(`${settings.outlet_name}-progress-bar`);
+    }
+  }
 
   get contentBefore() {
     return htmlSafe(settings.content_before);
@@ -73,7 +90,10 @@ export default class ProgressBar extends Component {
 
   <template>
     {{#if this.shouldShow}}
-      <div class="progress-bar__component">
+      <div class="progress-bar__component" 
+        {{didInsert this.addBodyClass}}
+        {{willDestroy this.removeBodyClass}}
+      >
         <div class="progress-bar__wrap">
           <div class="progress-bar__before">
             {{{this.contentBefore}}}

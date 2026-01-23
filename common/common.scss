@@ -13,8 +13,12 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    width: $progress_bar_width;
     max-width: 100%;
+    width: 100%;
+
+    @media screen and (width >= 925px) {
+      width: $progress_bar_width;
+    }
   }
 
   &__before,

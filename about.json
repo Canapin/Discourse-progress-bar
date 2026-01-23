@@ -1,8 +1,12 @@
 {
-  "about_url": null,
-  "license_url": null,
-  "assets": {
-  },
   "name": "Progress Bar",
-  "component": true
+  "component": true,
+  "authors": "Arkshine, Canapin",
+  "about_url": "Meta topic URL incoming",
+  "license_url": "https://www.wtfpl.net",
+  "theme_version": "1.0",
+  "minimum_discourse_version": null,
+  "maximum_discourse_version": null,
+  "assets": {},
+  "modifiers": {}
 }

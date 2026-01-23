@@ -1,5 +1,5 @@
 content_before:
-  default: "<strong>Donations progression</strong>"
+  default: "<strong>Donations progress</strong>"
   type: string
 content_after:
   default: ""

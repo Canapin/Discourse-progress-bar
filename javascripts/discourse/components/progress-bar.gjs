@@ -100,7 +100,7 @@ export default class ProgressBar extends Component {
       >
         <div class="progress-bar__wrap">
           <div class="progress-bar__before">
-            {{{this.contentBefore}}}
+            {{this.contentBefore}}
           </div>
           <div class="progress-bar__data">
             <div class="progress-bar__container">
@@ -111,7 +111,7 @@ export default class ProgressBar extends Component {
             </div>
           </div>
           <div class="progress-bar__after">
-            {{{this.contentAfter}}}
+            {{this.contentAfter}}
           </div>
         </div>
       </div>

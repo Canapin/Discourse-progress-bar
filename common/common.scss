@@ -3,10 +3,12 @@
     display: flex;
     justify-content: center;
     width: 100%;
+
     @media screen and (width >= 925px) {
       width: auto;
     }
   }
+
   &__wrap {
     display: flex;
     flex-wrap: wrap;
@@ -14,10 +16,12 @@
     width: $progress_bar_width;
     max-width: 100%;
   }
+
   &__before,
   &__after {
     width: 100%;
   }
+
   &__data {
     display: flex;
     align-items: center;
@@ -26,9 +30,10 @@
     margin: 0.5em 0;
     gap: 0.5em;
   }
+
   &__container {
     display: flex;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgb(0 0 0 / 0.2);
     width: 100%;
     height: $progress_bar_height;
     box-shadow: var(--shadow-header);
@@ -36,9 +41,11 @@
     padding: 3px;
     border-radius: 2px;
   }
+
   &__status {
     flex: 0 0 auto;
   }
+
   &__bar {
     transition: all 1s ease;
     height: 100%;
@@ -58,41 +65,49 @@
     padding-bottom: 1em;
   }
 }
+
 .above-site-header-progress-bar {
   .progress-bar__component {
     padding: 0.5em 10px 0;
     background-color: var(--header_background);
   }
 }
+
 .below-site-header-progress-bar {
   .progress-bar__component {
     padding: 0.5em 10px 0;
   }
 }
+
 .before-sidebar-sections-progress-bar {
   .progress-bar__wrap {
     width: 100%;
     padding: 1em 10px 0;
   }
 }
+
 .before-header-panel-progress-bar {
   // Don't show on mobile, no room for that
   .progress-bar {
     &__wrap {
       width: 100%;
     }
+
     &__component {
       display: none;
+
       @media screen and (width >= 925px) {
         display: initial;
       }
     }
+
     &__before,
     &__after {
       width: auto;
       margin: 0 0.5em;
     }
   }
+
   @media screen and (width >= 925px) {
     .before-header-panel-outlet {
       width: 100%;

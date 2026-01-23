@@ -10,7 +10,7 @@ en:
       current_value: "Current value of the progress bar"
       value_display: 'Value display format shown next to the progress bar. Available placeholders: {current}, {max}, {percentage}. Examples:<br>"{percentage}%" shows "33%".<br>"{current} of {max} rubber ducks" shows "9 of 15 rubber ducks"'
       hide_when_full: "Hide the progress bar when it's full'"
-      outlet_name: "Site location where the progress bar is displayed"
+      outlet_name: "Site location where the progress bar is displayed. Recommended outlets: above-main-container, above-site-header, before-header-panel, below-site-header, before-sidebar-sections"
       display_on_mobile: "Show the progress bar on mobile devices"
       display_on_homepage: "Show the progress bar on the homepage"
       url_must_contain: "URLs where the progress bar is displayed"

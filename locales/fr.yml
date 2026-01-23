@@ -10,7 +10,7 @@ fr:
       current_value: "Valeur actuelle de la barre de progression"
       value_display: 'Format d’affichage de la valeur à côté de la barre de progression. Variables disponibles : {current}, {max}, {percentage}. Exemples :<br>"{percentage}%" affiche "33%".<br>"{current} sur {max} canards en caoutchouc" affiche "9 sur 15 canards en caoutchouc"'
       hide_when_full: "Masquer la barre de progression lorsqu’elle est pleine"
-      outlet_name: "Emplacement du site où la barre de progression est affichée"
+      outlet_name: "Emplacement du site où la barre de progression est affichée. Emplacements recommandés : above-main-container, above-site-header, before-header-panel, below-site-header, before-sidebar-sections"
       display_on_mobile: "Afficher la barre de progression sur les appareils mobiles"
       display_on_homepage: "Afficher la barre de progression sur la page d’accueil"
       url_must_contain: "URLs où la barre de progression est affichée"

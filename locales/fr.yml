@@ -1,17 +1,17 @@
 fr:
   theme_metadata:
-    description: "Ajoute une barre de progression sur votre site."
+    description: "Ajoute une barre de progression à votre site"
     settings:
-      content_before: "Texte au-dessus de la barre de progression (HTML autorisé)"
-      content_after: "Texte en dessous de la barre de progression (HTML autorisé)"
-      progress_bar_width: "Largeur du container de la barre de progression"
+      content_before: "Texte affiché au-dessus de la barre de progression (HTML autorisé)"
+      content_after: "Texte affiché sous la barre de progression (HTML autorisé)"
+      progress_bar_width: "Largeur du conteneur de la barre de progression"
       progress_bar_height: "Hauteur de la barre de progression"
       max_value: "Valeur maximale de la barre de progression"
       current_value: "Valeur actuelle de la barre de progression"
-      value_display: "Format d'affichage de la valeur à côté de la barre de progression. Variables disponibles : {current}, {max} et {percentage}. Exemples :<br>'{percentage}%' affichera '33%'. '{current} sur {max} canards' affichera '66 of 200 canards'"
-      hide_when_full: "Masquer la barre de progression lorsqu'elle est pleine"
-      outlet_name: "L'emplacement sur le site où la barre de progression sera affichée"
+      value_display: 'Format d’affichage de la valeur à côté de la barre de progression. Variables disponibles : {current}, {max}, {percentage}. Exemples :<br>"{percentage}%" affiche "33%".<br>"{current} sur {max} canards en caoutchouc" affiche "9 sur 15 canards en caoutchouc"'
+      hide_when_full: "Masquer la barre de progression lorsqu’elle est pleine"
+      outlet_name: "Emplacement du site où la barre de progression est affichée"
       display_on_mobile: "Afficher la barre de progression sur les appareils mobiles"
-      display_on_homepage: "Afficher la barre de progression sur la page d'accueil"
-      url_must_contain: "URL où la barre de progression doit être affichée"
-      progress_bar_color: "Un background CSS valide. Exemples :<br>#FC0FC0<br>rgb(252,15,192)<br>var(--tertiary)<br>linear-gradient(0deg, white 0%, var(--tertiary) 100%)<br>Note: si non spécifié, une couleur dynamique sera utilisée, allant du rouge (0%) au vert (100%)"
+      display_on_homepage: "Afficher la barre de progression sur la page d’accueil"
+      url_must_contain: "URLs où la barre de progression est affichée"
+      progress_bar_color: "Valeur CSS valide pour l’arrière-plan. Exemples :<br>#FC0FC0<br>rgb(252,15,192)<br>var(--tertiary)<br>linear-gradient(0deg, white 0%, var(--tertiary) 100%)<br>Remarque : si vide, une couleur dynamique est utilisée, du rouge (0 %) au vert (100 %)"

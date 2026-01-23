@@ -1,17 +1,17 @@
 en:
   theme_metadata:
-    description: "Adds a progress bar on your site"
+    description: "Adds a progress bar to your site"
     settings:
-      content_before: "Text above the progress bar (HTML allowed)"
-      content_after: "Text below the progress bar (HTML allowed)"
-      progress_bar_width: "Width of the progress bar whole wrapper"
+      content_before: "Text shown above the progress bar (HTML allowed)"
+      content_after: "Text shown below the progress bar (HTML allowed)"
+      progress_bar_width: "Width of the progress bar wrapper"
       progress_bar_height: "Height of the progress bar"
-      max_value: "Maximum value of the progress bar"
+      max_value: "Maximum value for the progress bar"
       current_value: "Current value of the progress bar"
-      value_display: 'Value display format next to the progress bar. Available placeholders: {current}, {max} and {percentage}. Examples:<br>"{percentage}%" will show "33%". "{current} of {max} rubber duckies" will show "66 of 200 rubber duckies"'
-      hide_when_full: "Hide the progress bar when full"
-      outlet_name: "The location on the site where the progress bar will be displayed."
+      value_display: 'Value display format shown next to the progress bar. Available placeholders: {current}, {max}, {percentage}. Examples:<br>"{percentage}%" shows "33%".<br>"{current} of {max} rubber ducks" shows "9 of 15 rubber ducks"'
+      hide_when_full: "Hide the progress bar when it's full'"
+      outlet_name: "Site location where the progress bar is displayed"
       display_on_mobile: "Show the progress bar on mobile devices"
       display_on_homepage: "Show the progress bar on the homepage"
-      url_must_contain: "URLs where the progress bar should be displayed"
-      progress_bar_color: "A valid CSS background. Examples:<br>#FC0FC0<br>rgb(252,15,192)<br>var(--tertiary)<br>linear-gradient(0deg, white 0%, var(--tertiary) 100%)<br>Note: if empty, will use a dynamic color, from red (0%) to green (100%)"
+      url_must_contain: "URLs where the progress bar is displayed"
+      progress_bar_color: "Valid CSS background value. Examples:<br>#FC0FC0<br>rgb(252,15,192)<br>var(--tertiary)<br>linear-gradient(0deg, white 0%, var(--tertiary) 100%)<br>Note: if empty, a dynamic color is used from red (0%) to green (100%)"

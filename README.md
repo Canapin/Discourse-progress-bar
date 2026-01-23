@@ -1,4 +1,4 @@
-# **Theme Name**
+# **Discourse Progress Bar**
 
 **Theme Summary**
 

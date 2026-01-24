@@ -38,7 +38,7 @@ export default class ProgressBar extends Component {
   }
 
   get hideWhenFull() {
-    return !(this.hide_when_full && this.current_value >= this.max_value);
+    return this.hide_when_full && this.current_value >= this.max_value;
   }
 
   get showOnMobile() {
@@ -88,7 +88,7 @@ export default class ProgressBar extends Component {
   }
 
   get shouldShow() {
-    return this.showOnRoute && this.hideWhenFull && this.showOnMobile;
+    return this.showOnRoute && !this.hideWhenFull && this.showOnMobile;
   }
 
   <template>
